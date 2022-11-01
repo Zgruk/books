@@ -5,10 +5,10 @@
 
 {% block content %}
     <h1>Homepage</h1>
-    {% comment %} <img class="bookcover" src="{% static 'images/dfp.png%}"> {% endcomment %}
+    <img class="bookcover" src="{% static 'images/dfp.png' %}">
 
     {% if user.is_authenticated %}
-        Hi {{ user.email }}
+        <p>Hi {{ user.email }}</p>
         <p><a href="{% url 'logout' %}">Log Out</a></p>
     {% else %}
         <p>Yot are not logged in</p>

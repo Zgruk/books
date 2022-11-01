@@ -1,0 +1,17 @@
+h1 {
+    color: red;
+    margin-top: 70px;
+}
+
+h2 {
+    margin-top: 70px;
+}
+
+.bookcover {
+    height: 300px;
+    width: auto;
+}
+
+.container {
+    margin-top: 15px;
+}
