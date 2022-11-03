@@ -20,9 +20,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User registration
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    # this one uses built-in auth app
+    path('accounts/', include('allauth.urls')),
+    # this one uses all-auth app
 
     #Local apps
-    path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('accounts.urls')),
     path('', include('pages.urls')),
 ]
