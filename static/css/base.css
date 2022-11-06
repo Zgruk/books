@@ -10,13 +10,13 @@ h2 {
 .bookcover {
     height: 300px;
     width: auto;
-    /* margin-top: 150px; */
+    margin-top: 15px;
 }
 
 .container {
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 .navbar navbar-expand-md navbar-dark fixed-top bg-dark {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
