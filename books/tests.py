@@ -2,17 +2,17 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
 from django.urls import reverse
-from .models import Book
+from .models import Book, Review
 
 
 class BookTests(TestCase):
 
     def setUp(self):
-        # self.user = get_user_model.objects.create_user(
-        #     username = 'reviewuser',
-        #     email = 'reviewuser@email.com',
-        #     password = 'testpass123'
-        # )
+        self.user = get_user_model().objects.create_user(
+            username = 'reviewuser',
+            email = 'reviewuser@email.com',
+            password = 'testpass123'
+        )
         # self.permission = Permission.objects.get(
         #     codename='special_status'
         # )
@@ -22,18 +22,18 @@ class BookTests(TestCase):
             price = '25.00',
         )
 
-        # self.review = Review.objects.create(
-        #     book = self.book,
-        #     author = self.user,
-        #     review = 'An excellent book!'
-        # )
+        self.review = Review.objects.create(
+            book = self.book,
+            author = self.user,
+            review = 'An excellent book!'
+        )
 
     # def test_book_list_for_logged_in_user(self):
     #     self.client.login(email='reviewuser@email', password='testpass123')
     #     response = self.client.get(reverse('book_list'))
     #     self.assertEqual(response.status_code, 200)
     #     self.assertContains(response, 'Harry Potter')
-    #     self.asserTemplateUsed(response, 'books/book_list.html')
+    #     self.assertTemplateUsed(response, 'books/book_list.html')
 
     # def test_book_list_for_logged_in_user(self):
     #     self.client.logout())
@@ -64,5 +64,5 @@ class BookTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'Harry Potter')
-        self.assertNotContains(response, 'An excellent book!')
+        self.assertContains(response, 'An excellent book!')
         self.assertTemplateUsed(response, 'books/book_detail.html')

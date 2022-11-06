@@ -12,14 +12,14 @@
     <h2><a href="">{{ book.title }}</a></h2>
     <p>{{ book.author }}</p>
     <p>{{ book.price }}</p>
-    {% comment %} <div>
+    <div>
       <h2>Reviews</h2>
       <ul>
         {% for review in book.reviews.all %}
-        <li>{{ review.review }} ({{ reviews.author }})</li>
+        <li>{{ review.review }} ({{ review.author }})</li>
         {% endfor %}
       </ul>
-    </div> {% endcomment %}
+    </div>
   </div>
   
 {% endblock content %}
