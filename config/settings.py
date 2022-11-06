@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # Local
     'accounts.apps.AccountsConfig', 
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [
@@ -161,7 +162,16 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
     # for all-auth authentication
 )
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'antonpuhart@gmail.com'
+EMAIL_HOST_PASSWORD = '?SZu4bYmtdm.d4g'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+
 ACCOUNT_SESSION_REMEMBER = True
 # user login session to be remembered, so one doesn't need to login again
 # after refreshing or closing and the openting the page
